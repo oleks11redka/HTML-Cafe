@@ -1,0 +1,218 @@
+.header {
+    margin-bottom: 120px;
+
+    .wrapper {
+        display: flex;
+        flex-direction: row;
+        height: 631px;
+        position: relative;
+    }
+
+    .phone,
+    .location {
+        margin-right: 18px;
+    }
+
+    .phone {
+        width: 25px;
+        height: 25px;
+    }
+
+    .search {
+        width: 16px;
+        height: 15px;
+        position: absolute;
+        top: 24px;
+        left: 24px;
+        z-index: 2;
+    }
+
+    .location {
+        width: 20px;
+        height: 27px;
+    }
+
+    .greyArrow {
+        width: 13px;
+        height: 30px;
+        transform: rotate(90deg);
+    }
+
+
+    &__backgroundImage {
+        height: 100%;
+        width: 80%;
+        margin-left: auto;
+        background-color: $pictures;
+    }
+
+    &__leftPart {
+        position: absolute;
+        top: calc(50% - 140px);
+        left: 0
+    }
+
+    &__contacts {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+    }
+
+    &__contacts {
+        width: 591px;
+        height: 81px;
+        background-color: $yellow;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+    &__number,
+    &__address {
+        font-family: $montserrat;
+        font-size: 18px;
+        font-weight: 600;
+        letter-spacing: -0.45px;
+        color: $dGreen;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    &__title {
+        max-width: 600px;
+        font-size: 62px;
+        font-weight: 600;
+        letter-spacing: -1.55px;
+        color: $dGreen;
+        font-family: $montserrat;
+        margin-bottom: 48px;
+    }
+
+    &__searchBar {
+        max-width: 474px;
+        display: flex;
+        position: relative;
+        outline: none;
+    }
+
+    &__searchInput {
+        width: 360px;
+        font-family: $montserrat;
+        font-size: 15px;
+        outline: none;
+        padding: 21px 125px 27px 50px;
+        letter-spacing: -0.38px;
+        z-index: 1;
+        border: 1px solid transparent;
+        border-radius: 4px;
+
+        &::placeholder {
+            color: $lightGrey;
+        }
+    }
+
+    &__scrollDown {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        height: 12px;
+        transform: rotate(-90deg);
+        transform-origin: (0 0);
+    }
+
+    &__scrollText {
+        margin-left: 25px;
+        font-size: 12px;
+        font-weight: 500;
+        color: $lightGrey;
+        font-family: $montserrat;
+    }
+
+    &__searchButton {
+        border: 1px solid $yellow;
+        border-radius: 0 4px 4px 0;
+        width: 114px;
+        height: 69px;
+        outline: none;
+        position: absolute;
+        padding: 0;
+        right: 0;
+        top: 0px;
+        font-weight: 500;
+        font-size: 15px;
+        font-family: $montserrat;
+        color: $dGreen;
+        background: $yellow;
+        z-index: 2;
+        transition: all .3s;
+
+        &:hover {
+          background: $dGreen;
+          color: $white;
+          border: 1px solid $dGreen;
+        }
+  
+        &:active {
+          filter: brightness(70%);
+        }
+    }
+}
+
+@media (max-width: 788px) {
+    .header {
+        &__contacts {
+            width: 296px;
+            height: 162px;
+            flex-direction: column;
+        }
+    }
+}
+
+@media (max-width: 643px) {
+    .header {
+        background-color: $backColor;
+
+        &__title {
+            font-size: 54px;
+        }
+
+        &__backgroundImage,
+        &__scrollDown {
+            display: none;
+        }
+
+        &__leftPart {
+            top: calc(50% - 260px);
+        }
+    }
+}
+
+@media (max-width: 484px) {
+    .header {
+
+        &__searchBar {
+            max-width: 100%;
+        }
+    
+        &__searchInput {
+            width: 100%;
+        }
+
+        &__searchButton {
+            width: 90px;
+        }
+    }
+}
+
+@media (max-width: 379px) {
+    .header {
+        &__contacts {
+            width: 100%;
+        }
+    }
+}

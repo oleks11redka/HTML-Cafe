@@ -1,0 +1,19 @@
+// Base
+@import "base/_variables";
+@import "base/_mixins";
+@import "base/_reset";
+
+// Layout
+@import "layout/_general.scss";
+
+
+// Page styles
+@import "modules/_navbar.scss";
+@import "modules/_header.scss";
+@import "modules/_statistics.scss";
+@import "modules/_apartments-for-rent.scss";
+@import "modules/_how-it-works.scss";
+@import "modules/_services.scss";
+@import "modules/_our-agents.scss";
+@import "modules/_awesome-add.scss";
+@import "modules/_footer.scss";

@@ -1,0 +1,193 @@
+.footer {
+    padding-top: 64px;
+    padding-bottom: 90px;
+    background-color: $dGreen;
+
+    .greenArrow {
+        @include size(30px, 50px)
+    }
+
+    &__title,
+    &__newsInput,
+    &__logo,
+    &__copyright,
+    &__navListTitle,
+    &__navLinks {
+        font-family: $montserrat;
+    }
+
+    &__title,
+    &__newsInput,
+    &__logo,
+    &__copyright,
+    &__navLinks {
+        color: $white;
+    }
+
+    &__navListTitle,
+    &__line {
+        color: $lightGrey;
+    }
+
+    &__line {
+        margin-top: 50px;
+        margin-bottom: 80px;
+    }
+
+    &__navLinks {
+        text-decoration: none;
+    }
+
+    &__navList,
+    &__navigation,
+    &__bottom,
+    &__top,
+    &__info {
+        display: flex;
+    }
+
+    &__top,
+    &__navigation {
+        flex-direction: row;
+    }
+
+    &__top,
+    &__bottom {
+        justify-content: space-between;
+    }
+
+    &__navList,
+    &__info {
+        flex-direction: column;
+    }
+
+    &__bottom {
+        flex-direction: row-reverse;
+        flex-wrap: wrap;
+    }
+
+    &__info {
+        width: 147px;
+    }
+
+    &__navListTitle {
+        font-size: 13px;
+        margin-bottom: 42px;
+    }
+
+    &__navLinks {
+        font-size: 13px;
+        margin-bottom: 23px;
+    }
+
+    &__title {
+        max-width: 378px;
+        font-size: 40px;
+        font-weight: 600;
+        letter-spacing: -1px;
+    }
+
+    &__navigation {
+        width: 600px;
+        justify-content: space-between;
+    }
+
+    &__logo {
+        font-size: 25px;
+        font-weight: 600;
+        margin-bottom: 70px;
+        letter-spacing: -0.63px;
+    }
+
+    &__newsletter {
+        max-width: 484px;
+        height: 65px;
+        position: relative;
+    }
+
+    &__newsInput {
+        width: 360px;
+        font-family: $montserrat;
+        font-size: 15px;
+        outline: none;
+        padding: 21px 94px 23px 28px;
+        letter-spacing: -0.38px;
+        z-index: 1;
+        border: 1px solid transparent;
+        color: $dGreen;
+
+        &::placeholder {
+            color: $lightGrey;
+        }
+    }
+
+    &__newsButton {
+        outline: none;
+        background-color: transparent;
+        border: none;
+        position: absolute;
+        top: 6px;
+        right: 28px;
+        z-index: 2;
+    }
+}
+
+@media (max-width: 820px) {
+    .footer {
+
+        &__info {
+            margin-top: 20px;
+            width: 100%;
+            flex-direction: row;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+
+        &__logo {
+            margin: 0;
+        }
+
+        &__title {
+            margin-bottom: 20px;
+        }
+
+        &__top {
+            flex-direction: column;
+        }
+
+        &__bottom {
+            flex-direction: column;
+        }
+
+        &__navigation {
+            width: 100%;
+            justify-content: space-evenly;
+        }
+    }
+}
+
+@media (max-width: 540px) {
+    
+    .footer {
+        &__newsletter {
+            max-width: 310px;
+        }
+    
+        &__newsInput {
+            width: 250px;
+            padding: 21px 40px 23px 20px;
+        }
+    
+        &__newsButton {
+            top: 25px;
+            right: 28px;
+        }
+
+        &__navigation {
+            justify-content: space-between;
+        }
+    }
+}
+
+
+

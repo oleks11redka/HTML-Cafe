@@ -1,0 +1,205 @@
+.navBar {
+    padding: 26px 0;
+    
+    .container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .navBar__listLink,
+    .navBar__buttonLinks--notButton {
+      transition: all .3s;
+
+      &:hover {
+        color: $yellow;
+      }
+
+      &:active {
+        filter: brightness(86%);
+      }
+    }
+
+    &__menu {
+        @include pos(absolute, $t:15px, $r:3%, $z:99);
+        padding: 10px;
+        transition: .3s;
+        
+        @media (min-width: $desktop) {
+            display: none;
+        }
+    }
+    &__input {
+        display: none; 
+
+        &:checked {
+            + .navBar__menu {
+              width: 50px;
+            z-index: 100;
+              .burger-menu {
+                span {
+                  display: none;
+                }
+      
+                &::before {
+                  transform: rotate(47deg);
+                }
+      
+                &::after {
+                  transform: rotate(-47deg);
+                }
+              }
+            }
+            ~ .navBar__list {
+              right: 0;
+            }
+
+            ~ .navBar__buttons {
+                right: 0;
+            }
+
+            
+          }
+    }
+
+
+    &__links,
+    &__list,
+    &__buttons {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }    
+
+    &__list {
+        margin-right: 100px;
+
+        @media (max-width: $desktop) {
+            @include pos(fixed, $z: 99, $t: 0, $r: -100%);
+            @include size (100%, 100%);
+            transition: .3s;
+            padding-top: 100px;
+            margin-right: 0px;
+            flex-direction: column;
+            background-color: $backColor;
+            & .navBar__listItem {
+                margin: 0;
+            }
+
+            & .navBar__listLink {
+                display: inline-block;
+                margin: 20px 30px;
+            }
+          }
+          @media (max-width: $mobile) {
+          background-color: $backColor;
+          }
+    }
+
+    &__buttons {
+        @media (max-width: $desktop) {
+            @include pos(fixed, $z: 99, $t: 420px, $r: -100%);
+            @include size (100%, 100%);
+            transition: .3s;
+            flex-direction: column;
+
+            & .navBar__buttonLinks {
+                margin: 20px 30px;
+            }
+          }
+          @media (max-width: $mobile) {
+          background-color: #f5f6f6;
+          }
+    }
+
+    &__logo,
+    &__listLink,
+    &__buttonLinks {
+        color: $dGreen;
+        font-family: $montserrat;
+        text-decoration: none;
+    }
+
+    &__listLink,
+    &__buttonLinks {
+        font-size: 13px;
+        font-weight: normal;
+    }
+
+    &__logo {
+        font-size: 25px;
+        font-weight: 600;
+        line-height: 1.59;
+        text-align: center;
+    }
+
+    &__listItem {
+        display: inline-block;
+        margin-right: 34px;
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+
+    &__startedButton {
+      background: $yellow;
+      padding: 12px 22px;
+      border-radius: 6px;
+      margin-left: 22px;
+      border: solid 1px $yellow;
+      transition: all .3s;
+
+      &:hover {
+        background: $dGreen;
+        color: $white;
+        border: 1px solid $dGreen;
+      }
+
+      &:active {
+        filter: brightness(70%);
+      }
+
+    }
+
+}
+
+.burger-menu {
+    @mixin line($top: 0) {
+      background: $dGreen;
+      border-radius: 3px;
+      position: absolute;
+      top: $top;
+      transition: .3s;
+      @include size( 100%, 5px)
+    }
+  
+    @include size (50px, 40px);
+    display: block;
+    position: relative;
+  
+    @media (min-width: $desktop) {
+      display: none;
+    }
+  
+    span {
+    display: block;
+    transform: translateY(-50%);
+    @include line(50%);
+    }
+  
+    &::before {
+      @include line();
+      content: '';
+      transform-origin: 0 0;
+    }
+  
+    &::after {
+      @include line(calc(100% - 5px));
+      content: '';
+      transform-origin: 0 100%;
+    }
+  }
+
+
